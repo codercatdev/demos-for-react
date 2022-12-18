@@ -370,6 +370,23 @@ export default function Layout() {
   )
 }
 ```
+Also add this footer component (in footer.tsc inside same level as layout.tsx) to use in Layout.
+
+```
+import packageJson from "../../package.json"
+
+export default function Footer() {
+  return (
+    <footer>
+      <p>Example built by</p>
+      <a href="https://ticianomorvan.me" target="_blank" rel="noreferrer">
+        Ticiano Morvan
+      </a>
+      <p>on top of Appwrite SDK {packageJson.dependencies.appwrite}</p>
+    </footer>
+  )
+}
+```
 
 This is not really a page but a template of how our pages are displayed. We created a navigation bar with the links to our desired pages, added the Appwrite's logo, our `Outlet` component (where `react-router` will display the page's content) and a footer, with some information.
 
